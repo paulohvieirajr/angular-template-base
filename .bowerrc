@@ -1,0 +1,8 @@
+{
+  "directory": "src/app/libs",
+	"proxy": "http://172.16.160.150:8080",
+  "https-proxy":"http://172.16.160.150:8080",
+	"scripts": {
+		"postinstall": "gulp wiredep"
+	}
+}
