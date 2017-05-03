@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     url = require('url'),
     browserSync = require('browser-sync'),
     proxy = require('proxy-middleware');
-var historyApiFallback = require('connect-history-api-fallback')
+var historyApiFallback = require('connect-history-api-fallback'),
+    modRewrite = require('connect-modrewrite');
 
 var config = require('./config');
 
@@ -46,14 +47,20 @@ module.exports = function () {
             options.preserveHost = true;
             return proxy(options);
         }));
-    var proxyOptions = url.parse('http://localhost:8080/api');
+    
+    var proxyOptions = url.parse('http://localhost:54576/');
     proxyOptions.route = '/api';
+
     browserSync({
-        open: false,
+        open: true,
         port: config.port,
         server: {
             baseDir: config.app,
-            middleware: [historyApiFallback(), proxy(proxyOptions)]
+            middleware: [historyApiFallback(), proxy(proxyOptions),
+                 modRewrite([
+                    '!\\.\\w+$ /index.html [L]'
+                 ])
+            ]
         }
     });
 

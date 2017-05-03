@@ -1,0 +1,6 @@
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\bin\vs_last.dll.config
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\bin\vs_last.dll
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\bin\vs_last.pdb
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\obj\Debug\vs_last.csprojResolveAssemblyReference.cache
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\obj\Debug\vs_last.dll
+C:\dev\gulp_build\vs_2013_with_gulp\vs_last\obj\Debug\vs_last.pdb

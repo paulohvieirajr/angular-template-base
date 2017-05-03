@@ -21,9 +21,11 @@ var config = require('./config');
 var initTask = lazypipe()
     .pipe(sourcemaps.init)
     .pipe(footer, ';');
+
 var jsTask = lazypipe()
     .pipe(ngAnnotate)
     .pipe(uglify);
+
 var cssTask = lazypipe()
     .pipe(prefix)
     .pipe(cssnano);
@@ -35,6 +37,7 @@ module.exports = function() {
     return gulp.src([config.app + '**/*.html',
         '!' + config.app + 'app/**/*.html',
         '!' + config.app + 'swagger-ui/**/*',
+        '!' + config.app + 'node_modules/**/*',
         '!' + config.bower + '**/*.html'])
         .pipe(plumber({errorHandler: handleErrors}))
         //init sourcemaps and prepend semicolon

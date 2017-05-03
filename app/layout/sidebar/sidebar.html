@@ -1,0 +1,13 @@
+﻿<div data-cc-sidebar data-ng-controller="sidebarCtrl as vm" ng-init="vm.init()">
+    <div class="sidebar-filler"></div>
+    <div class="sidebar-dropdown"><a href="#">Menu</a></div>
+    <div class="sidebar-inner">
+        <div class="sidebar-widget">
+        </div>
+        <ul class="navi">
+            <li class="nlightblue fade-selection-animation" ng-repeat="item in vm.states">
+                <a ui-sref="{{::item.name}}" style="color: #FFF;">{{::item.name}}</a>
+            </li>
+        </ul>
+    </div>
+</div>
